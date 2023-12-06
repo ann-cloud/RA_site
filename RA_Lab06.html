@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RA</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.3.0/math.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="img/icon.png">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="css/ComputerGraphics.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+    
+    <!-- Topbar -->
+    <nav class="navbar">
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="d-flex align-items-center justify-content-left">
+            <div id="menu-button">
+                <img  id="sidebarToggle" src="img/menu.png" alt="menu-icon">
+            </div>
+            <a href="RA_Lab05.html">
+                <img class="pl-4" src="img/icon.png" alt="icon">
+                <span>Quality Assurance</span>
+            </a>
+        </div>
+        <!-- Topbar Navbar -->
+        <ul class="navbar-nav ml-auto">
+
+        </ul>
+    </nav>
+    <!-- End of Topbar -->
+    <div class="tabs">
+        <button class="tablink" onclick="openPage('etap1', this)" id="defaultOpen">Критерії</button>
+        <button class="tablink" onclick="openPage('etap2', this)" >Оцінювання</button>
+        <button class="tablink" onclick="openPage('etap3', this)" >Критерії оцінювання</button>
+        <button class="tablink" onclick="openPage('etap4', this)" >Якість ПЗ</button>
+        <button class="tablink" onclick="openPage('etap5', this)" >Д1</button>
+        <button class="tablink" onclick="openPage('etap6', this)" >Д2</button>
+        <button class="tablink" onclick="openPage('etap7', this)" >Д3</button>
+        <button class="tablink" onclick="openPage('etap8', this)" >Д4</button>
+        <button class="tablink" onclick="openPage('etap9', this)" >Д5</button>
+        <button class="tablink" onclick="openPage('etap10', this)" >Д6</button>
+    </div>
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav  sidebar  accordion" id="accordionSidebar">
+            <!-- Nav Item -->
+            <li class="nav-item">
+                <a class="nav-link pt-2 pb-2" href="RA_Lab05.html" onclick="changeTabColor(this)">
+                    <div class="d-flex align-items-center justify-content-left" style="background-color: #32936F; color: white;">
+                        <img src="img/risk-skull-svgrepo-com.svg" alt="pattern-icon">
+                        <span>RA_Lab05</span>
+                    </div>
+                </a>
+                <a class="nav-link pt-2 pb-2" href="RA_Lab06.html" onclick="changeTabColor(this)">
+                    <div class="d-flex align-items-center justify-content-left" style="background-color: #32936F; color: white;">
+                        <img src="img/quality-reward-svgrepo-com.svg" alt="pattern-icon">
+                        <span>RA_Lab06</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <div id="etap1" class="tabcontent" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+                    <div id="content-wrapper" class="d-flex flex-column">
+                        <!-- Main Content -->
+                        <div id="content">
+                            <div class="etapHeading">
+                                <h4>Відібрані критерії та початкові вагові коефіцієнти експертів за кожним критерієм оцінювання</h3>
+                                <div class="table-container">
+                                    <table id="criteriaTable">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="3">№</th>
+                                                <th rowspan="3">Критерії оцінювання якості ПЗ</th>
+                                                <th colspan="4" style="text-align: center;">Експерти:</th>       
+                                                <th rowspan="3">Середнє значення вагових коефіцієнтів</th>              
+                                            </tr>
+                                            <tr>
+                                                <th>Галузі застосування</th>
+                                                <th>Зручності використання</th>
+                                                <th>З програмування</th>       
+                                                <th>Потенційні користувачі</th> 
+                                            </tr>
+                                            <tr>
+                                                <th colspan="4" style="text-align: center;">Вагові коефіцієнти</th> 
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Точність управління та обчислень</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Стиль транспорту</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Функціональність</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Зручність користування</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Можливості</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Виконання завдань</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Взаємодія з іншими системами</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Продуктивність</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Збереженість даних</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Захист від помилок</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="etap2" class="tabcontent" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+                    <!-- Tab links -->
+                    <div class="tab">
+                        <button class="tablinks" onclick="openSubTab(event, 'etap21')" id="defaultOpen_etap2">Оцінки експертів</button>
+                        <button class="tablinks" onclick="openSubTab(event, 'etap22')">Оцінки користувачів</button>
+                    </div>
+                    <div id="content-wrapper" class="d-flex flex-column">
+                        <!-- Main Content -->
+                        <div id="content">
+                            <!-- Tab content -->
+                            <div id="etap21" class="subtabcontent">
+                                <h4>Оцінки експертів</h3>
+                                <div class="table-container">
+                                    <table id="assessmentTable1">
+                                        <thead>
+                                            <tr>
+                                                <th>№</th>
+                                                <th>Критерії оцінювання якості ПЗ</th>
+                                                <th>Експерт галузі</th>       
+                                                <th>Експерт зручності використання</th>           
+                                                <th>Експерт з програмування</th>   
+                                                <th>Потенційний користувач</th>      
+                                                <th>Середнє значення</th>                  
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Точність управління та обчислень</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="0.01" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Стиль транспорту</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="0.01" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Функціональність</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="0.01" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Зручність користування</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="0.01" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Можливості</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="0.01" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Виконання завдань</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="0.01" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Взаємодія з іншими системами</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="0.01" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Продуктивність</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="0.01" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Збереженість даних</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="0.01" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Захист від помилок</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="0.01" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div id="etap22" class="subtabcontent">
+                                <h4>Оцінки користувачів</h3>
+                                <div class="table-container">
+                                    <table id="assessmentTable2">
+                                        <thead>
+                                            <tr>
+                                                <th>№</th>
+                                                <th>Критерії оцінювання якості ПЗ</th>
+                                                <th>Користувач 1</th>    
+                                                <th>Користувач 2</th> 
+                                                <th>Користувач 3</th> 
+                                                <th>Користувач 4</th> 
+                                                <th>Користувач 5</th>        
+                                                <th>Користувач 6</th>    
+                                                <th>Користувач 7</th> 
+                                                <th>Користувач 8</th> 
+                                                <th>Користувач 9</th> 
+                                                <th>Користувач 10</th> 
+                                                <th>Користувач 11</th>    
+                                                <th>Користувач 12</th> 
+                                                <th>Користувач 13</th> 
+                                                <th>Користувач 14</th> 
+                                                <th>Користувач 15</th> 
+                                                <th>Користувач 16</th>    
+                                                <th>Користувач 17</th> 
+                                                <th>Користувач 18</th> 
+                                                <th>Користувач 19</th> 
+                                                <th>Користувач 20</th>      
+                                                <th>Середнє значення</th>           
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Точність управління та обчислень</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Стиль транспорту</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Функціональність</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Зручність користування</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Можливості</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Виконання завдань</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Взаємодія з іншими системами</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Продуктивність</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Збереженість даних</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Захист від помилок</td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td><input type="number" class="value-input" step="1" min="1" max="10" value="1"></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="etap3" class="tabcontent" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+                    <div id="content-wrapper" class="d-flex flex-column">
+                        <!-- Main Content -->
+                        <div id="content">
+                            <div id="etap3Heading">
+                                <h4>Критерії оцінювання якості ПЗ, їхні вагові коефіцієнти та оцінки експертів (формат коефіцієнт / оцінка)</h3>
+                                <div class="table-container">
+                                    <table id="bothTable">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="3">№</th>
+                                                <th rowspan="3">Критерії оцінювання якості ПЗ</th>
+                                                <th colspan="4" style="text-align: center;">Експерти:</th>       
+                                                <th rowspan="3">Середнє значення коефіцієнтів / оцінок за критерієм</th>              
+                                            </tr>
+                                            <tr>
+                                                <th>Галузі застосування</th>
+                                                <th>Зручності використання</th>
+                                                <th>З програмування</th>       
+                                                <th>Потенційні користувачі</th> 
+                                            </tr>
+                                            <tr>
+                                                <th colspan="4" style="text-align: center;">Вагові коефіцієнти / оцінки експертів, бали</th> 
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Точність управління та обчислень</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Стиль транспорту</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Функціональність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Зручність користування</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Можливості</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Виконання завдань</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Взаємодія з іншими системами</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Продуктивність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Збереженість даних</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Захист від помилок</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>Середнє значення коефіцієнтів / оцінок за експертом</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="etap4" class="tabcontent" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+                    <!-- Tab links -->
+                    <div class="tab">
+                        <button class="tablinks" onclick="openSubTab(event, 'etap41')" id="defaultOpen_etap4">Типи експертів і їхні вагомості</button>
+                        <button class="tablinks" onclick="openSubTab(event, 'etap42')">Результати розрахунку показників</button>
+                    </div>
+                    <div id="content-wrapper" class="d-flex flex-column">
+                        <!-- Main Content -->
+                        <div id="content">
+                            <!-- Tab content -->
+                            <div id="etap41" class="subtabcontent">
+                                <h4>Типи експертів і їхні вагомості</h3>
+                                <div class="table-container">
+                                    <table id="qualityTable1">
+                                        <thead>
+                                            <tr>
+                                                <th>Типи експертів</th>
+                                                <th>Абсолютний коефіцієнт вагомості</th>
+                                                <th>Відносний коефіцієнт вагомості</th>       
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Експерт галузі</td>
+                                                <td>7</td>
+                                                <td>0.7</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Експерт зручності використання</td>
+                                                <td>8</td>
+                                                <td>0.8</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Експерт з програмування</td>
+                                                <td>9</td>
+                                                <td>0.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Потенційний користувач</td>
+                                                <td>5</td>
+                                                <td>0.5</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div id="etap42" class="subtabcontent">
+                                <h4>Результати розрахунку комплексних показників якості ПЗ та їхні усереднені значення</h3>
+                                <div class="table-container">
+                                    <table id="qualityTable2">
+                                        <thead>
+                                            <tr>
+                                                <th rowspan="2">№</th>
+                                                <th rowspan="2">Критерії оцінювання якості ПЗ</th>
+                                                <th colspan="4" style="text-align: center;">Показники експертів:</th>       
+                                                <th colspan="2">Усереднені значення:</th>              
+                                            </tr>
+                                            <tr>
+                                                <th>Галузі застосування</th>
+                                                <th>Зручності використання</th>
+                                                <th>З програмування</th>       
+                                                <th>Потенційні користувачі</th> 
+                                                <th>Показника</th> 
+                                                <th>Оцінок</th> 
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>Коефіцієнти вагомості</td>
+                                                <td>0.7</td>
+                                                <td>0.8</td>
+                                                <td>0.9</td>
+                                                <td>0.5</td>
+                                                <td>0.725</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Точність управління та обчислень</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Стиль транспорту</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Функціональність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Зручність користування</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Можливості</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Виконання завдань</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Взаємодія з іншими системами</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Продуктивність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Збереженість даних</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Захист від помилок</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>Усереднені оцінки експертів</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>Оцінки експертів з врахуванням їхньої вагомості</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="etap5" class="tabcontent" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+                    <div id="content-wrapper" class="d-flex flex-column">
+                        <!-- Main Content -->
+                        <div id="content">
+                            <!-- Tab content -->
+                            <div class="etapHeading">
+                                <h4>Діаграма для експертів галузі</h3>
+                                <div class="table-container">
+                                    <table id="diagramTable1">
+                                        <thead>
+                                            <tr>
+                                                <th>№</th>
+                                                <th>Критерії оцінювання якості ПЗ</th>
+                                                <th>Експерт галузі</th>
+                                                <th>Частка круга</th>
+                                                <th>Кут 𝞪</th>
+                                                <th>Кут 𝞫(град)</th>
+                                                <th>Кут 𝞫(рад)</th>
+                                                <th>Довжина вектора</th>
+                                                <th>a</th>
+                                                <th>b</th>
+                                                <th>S</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Точність управління та обчислень</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Стиль транспорту</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Функціональність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Зручність користування</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Можливості</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Виконання завдань</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Взаємодія з іншими системами</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Продуктивність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Збереженість даних</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Захист від помилок</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div style="margin-left: 30px; margin-top: 70px; margin-right: 30px;">
+                                        <canvas class="canvaDiagram" id="diagram1"></canvas>
+                                        <p id="diagram1-data"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="etap6" class="tabcontent" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+                    <div id="content-wrapper" class="d-flex flex-column">
+                        <!-- Main Content -->
+                        <div id="content">
+                            <!-- Tab content -->
+                            <div class="etapHeading">
+                                <h4>Діаграма для експертів зручності</h3>
+                                <div class="table-container">
+                                    <table id="diagramTable2">
+                                        <thead>
+                                            <tr>
+                                                <th>№</th>
+                                                <th>Критерії оцінювання якості ПЗ</th>
+                                                <th>Експерт зручності</th>
+                                                <th>Частка круга</th>
+                                                <th>Кут 𝞪</th>
+                                                <th>Кут 𝞫(град)</th>
+                                                <th>Кут 𝞫(рад)</th>
+                                                <th>Довжина вектора</th>
+                                                <th>a</th>
+                                                <th>b</th>
+                                                <th>S</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Точність управління та обчислень</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Стиль транспорту</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Функціональність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Зручність користування</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Можливості</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Виконання завдань</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Взаємодія з іншими системами</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Продуктивність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Збереженість даних</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Захист від помилок</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div style="margin-left: 30px; margin-top: 70px; margin-right: 30px;">
+                                        <canvas class="canvaDiagram" id="diagram2"></canvas>
+                                        <p id="diagram2-data"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="etap7" class="tabcontent" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+                    <div id="content-wrapper" class="d-flex flex-column">
+                        <!-- Main Content -->
+                        <div id="content">
+                            <!-- Tab content -->
+                            <div class="etapHeading">
+                                <h4>Діаграма для експертів з програмування</h3>
+                                <div class="table-container">
+                                    <table id="diagramTable3">
+                                        <thead>
+                                            <tr>
+                                                <th>№</th>
+                                                <th>Критерії оцінювання якості ПЗ</th>
+                                                <th>Експерт з програмування</th>
+                                                <th>Частка круга</th>
+                                                <th>Кут 𝞪</th>
+                                                <th>Кут 𝞫(град)</th>
+                                                <th>Кут 𝞫(рад)</th>
+                                                <th>Довжина вектора</th>
+                                                <th>a</th>
+                                                <th>b</th>
+                                                <th>S</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Точність управління та обчислень</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Стиль транспорту</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Функціональність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Зручність користування</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Можливості</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Виконання завдань</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Взаємодія з іншими системами</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Продуктивність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Збереженість даних</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Захист від помилок</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div style="margin-left: 30px; margin-top: 70px; margin-right: 30px;">
+                                        <canvas class="canvaDiagram" id="diagram3"></canvas>
+                                        <p id="diagram3-data"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="etap8" class="tabcontent" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+                    <div id="content-wrapper" class="d-flex flex-column">
+                        <!-- Main Content -->
+                        <div id="content">
+                            <!-- Tab content -->
+                            <div class="etapHeading">
+                                <h4>Діаграма для потенційних користувачів</h3>
+                                <div class="table-container">
+                                    <table id="diagramTable4">
+                                        <thead>
+                                            <tr>
+                                                <th>№</th>
+                                                <th>Критерії оцінювання якості ПЗ</th>
+                                                <th>Потенційні користувачі</th>
+                                                <th>Частка круга</th>
+                                                <th>Кут 𝞪</th>
+                                                <th>Кут 𝞫(град)</th>
+                                                <th>Кут 𝞫(рад)</th>
+                                                <th>Довжина вектора</th>
+                                                <th>a</th>
+                                                <th>b</th>
+                                                <th>S</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Точність управління та обчислень</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Стиль транспорту</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Функціональність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Зручність користування</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Можливості</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Виконання завдань</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Взаємодія з іншими системами</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Продуктивність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Збереженість даних</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Захист від помилок</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div style="margin-left: 30px; margin-top: 70px; margin-right: 30px;">
+                                        <canvas class="canvaDiagram" id="diagram4"></canvas>
+                                        <p id="diagram4-data"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="etap9" class="tabcontent" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+                    <div id="content-wrapper" class="d-flex flex-column">
+                        <!-- Main Content -->
+                        <div id="content">
+                            <!-- Tab content -->
+                            <div class="etapHeading">
+                                <h4>Діаграма зведених показників експертів</h3>
+                                <div style="margin-left: 30px; margin-top: 70px; margin-right: 30px; display: flex;">
+                                    <canvas class="canvaDiagram" id="diagram5"></canvas>
+                                    <div class="diagram5-data" style="margin-left: 30px; display: flex; flex-direction: column;">
+                                        <div class="row">
+                                            <div class="colored-square" style="background-color: #151E3F;"></div>
+                                            <p class="text-next-to-square" style="font-size: 12px; color: black;">Діаграма для експертів галузі</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="colored-square" style="background-color: #E4572E;"></div>
+                                            <p class="text-next-to-square" style="font-size: 12px; color: black;">Діаграма для експертів зручності</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="colored-square" style="background-color: #F0F66E;"></div>
+                                            <p class="text-next-to-square" style="font-size: 12px; color: black;">Діаграма для експертів з програмування</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="colored-square" style="background-color: #F0F8EA;"></div>
+                                            <p class="text-next-to-square" style="font-size: 12px; color: black;">Діаграма для потенційних користувачів</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="etap10" class="tabcontent" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+                    <div id="content-wrapper" class="d-flex flex-column">
+                        <!-- Main Content -->
+                        <div id="content">
+                            <!-- Tab content -->
+                            <div class="etapHeading">
+                                <h4>Діаграма узагальнених показників експертів</h3>
+                                <div class="table-container">
+                                    <table id="diagramTable6">
+                                        <thead>
+                                            <tr>
+                                                <th>№</th>
+                                                <th>Критерії оцінювання якості ПЗ</th>
+                                                <th>Усереднені оцінки</th>
+                                                <th>Частка круга</th>
+                                                <th>Кут 𝞪</th>
+                                                <th>Кут 𝞫(град)</th>
+                                                <th>Кут 𝞫(рад)</th>
+                                                <th>Довжина вектора</th>
+                                                <th>a</th>
+                                                <th>b</th>
+                                                <th>S</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Точність управління та обчислень</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Стиль транспорту</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Функціональність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Зручність користування</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Можливості</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>Виконання завдань</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>Взаємодія з іншими системами</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>Продуктивність</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>Збереженість даних</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>Захист від помилок</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div style="margin-left: 30px; margin-top: 70px; margin-right: 30px;">
+                                        <canvas class="canvaDiagram" id="diagram6"></canvas>
+                                        <p id="diagram6-data"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Page Heading -->
+            </div>
+            <!-- End of Main Content -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Footer -->
+    <footer class="footer">
+
+            <div class="copyright text-left my-auto">
+                <span>Performed by a student of group PZ-32: Suslova Anna</span>
+            </div>
+        
+    </footer>
+    <!-- End of Footer -->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.js"></script>
+    <script src="js/tabs1.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/diagrams.js"></script>
+</body>
+
+</html>

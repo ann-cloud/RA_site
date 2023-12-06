@@ -1,0 +1,540 @@
+  /*Обнулення*/
+  *{
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+    *,*:before,*:after{
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    :focus,:active{outline: none;}
+    a:focus,a:active{outline: none;}
+    nav,footer,header,aside{display: block;}
+    html,body{
+      height: 100%;
+      width: 100%;
+      font-size: 100%;
+      line-height: 1;
+      font-size: 14px;
+      -ms-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+    input,button,textarea{font-family:inherit;}
+    input::-ms-clear{display: none;}
+    button{cursor: pointer;}
+    button::-moz-focus-inner {padding:0;border:0;}
+    a, a:visited{text-decoration: none;}
+    a:hover{text-decoration: none;}
+    ul li{list-style: none;}
+    img{vertical-align: top;}
+    h1,h2,h3,h5,h6{font-size:inherit;font-weight: 400;}
+
+  body {
+      background-color: #EFE6DD;
+      overflow: hidden; /* Заборона прокрутки на рівні тіла сторінки */
+  }
+
+  .navbar{
+    height: 10%; 
+  }
+
+  .nav-item img {
+      width: 25%;
+  }
+
+  #wrapper {
+      height: 85%; /* 100% висота відносно видимого вікна */
+      overflow: hidden; /* Заборона прокрутки в обгортці */
+  }
+
+  #content-wrapper {
+      /*height: calc(100vh - 56px); /* 56px - висота вашого навбару */
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative; /* Зробимо wrapper відносної позиції */
+  }
+
+  #content {
+      flex-grow: 1;
+      overflow-y: auto;
+      overflow: hidden;
+  }
+
+  #main-content {
+      background-image: url('/img/computer-background.png');
+      background-size: contain;
+      background-position: center;
+      height: 100%;
+      width: 95%;
+      overflow: hidden;
+  }
+
+  .footer {
+      height: 5%; 
+      background-color: transparent; /* Колір фону вашого футера */
+      padding: 10px;
+      text-align: center;
+      margin-top: auto; /* Розміщення футера внизу контейнера */
+  }
+
+
+  .nav-item span {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 5px;
+  }
+
+  .nav-item div {
+    color: #13293D;
+    text-decoration: none;
+    background-color: white;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 10px;
+  }
+
+  .nav-item img {
+    width: 20%;
+    margin-right: 10px;
+    height: 30px;
+    width: 30px;
+  }
+
+  .navbar span {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 5px;
+    color:#13293D;
+  }
+
+  #main-content span {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    margin-left: 5px;
+    color:#13293D;
+  }
+
+  .main-buttons {
+    text-align: center;
+    border-radius: 20px;
+    border: 3px solid white;
+    background: #13293D;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 30%;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+#etap1,
+#etap2,
+#etap3,
+#etap4,
+#etap5,
+#etap6,
+#etap7,
+#etap8,
+#etap9,
+#etap10 {
+    background-color: white;
+    height: 100%;
+    width: 95%;
+    overflow: hidden;
+  }
+
+  #menu-button {
+    position: relative;
+    display: inline-block; /* Робимо блок інлайновим, щоб не порушувати розміщення */
+  }
+
+  #menu-button:hover::before {
+    content: ""; /* Додаємо порожній контент для псевдоелемента ::before */
+    position: absolute;
+    top: 50%; /* Позиція відносно верхнього краю елемента-батька */
+    left: 50%; /* Позиція відносно лівого краю елемента-батька */
+    transform: translate(-50%, -50%); /* Центруємо відносно центру батьківського елемента */
+    width: 50px; /* Ширина кільця */
+    height: 50px; /* Висота кільця */
+    border-radius: 50%; /* Робимо кругле кільце */
+    background-color: #E2D7CC; /* Колір кільця при наведенні */
+    z-index: -1; /* Поміщаємо кільце позаду картинки */
+  }
+
+  #sidebarToggle {
+    display: block; /* Робимо картинку блоком, щоб кільце обгортало її */
+    width: 100%; /* Задаємо ширину картинки */
+    /*height: 50px; /* Задаємо висоту картинки */
+  }
+
+
+  /* Set height of body and the document to 100% to enable "full page tabs" */
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .tabs {
+    position: absolute;
+    top: 0;
+    left: 98.2%;
+    transform: translateX(-100%);
+    z-index: 2;
+    background-color: #EFE6DD;
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    width: max-content; /* Змінено на max-content */
+  }
+
+
+.sidebar-toggled .tabs {
+      left: 98% !important;
+}
+  
+
+  .tablink {
+    background-color: #32936F;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 8px;
+    font-size: 13px;
+    font-weight: 600;
+    box-sizing: border-box;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .tablink:hover {
+    background-color: #32936F;
+  }
+
+
+#defaultOpen {
+  background-color: white;
+  color: #32936F;
+}
+
+#etap1 p,
+#etap2 p,
+#etap3 p,
+#etap4 p,
+#etap5 p,
+#etap6 p,
+#etap7 p,
+#etap8 p,
+#etap9 p,
+#etap10 p  {
+  color: #32936F;
+  font-size: 28px;
+}
+
+#etap1 span,
+#etap2 span,
+#etap3 span, 
+#etap4 span,
+#etap5 span, 
+#etap6 span,
+#etap7 span,
+#etap8 span, 
+#etap9 span,
+#etap10 span {
+  color: #13293D; 
+  font-size: 18px;
+}
+
+
+input[type=range] {
+  height: 25px;
+  -webkit-appearance: none;
+  margin: 0;
+  width: 60%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: black;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid black;
+  height: 12px;
+  width: 12px;
+  border-radius: 25px;
+  background: white;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -4px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: black;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: black;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid black;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #A1D0FF;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: black;
+  border: 0px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: black;
+  border: 0px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid black;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #A1D0FF;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: black;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: black;
+}
+
+#etap1 input[type=text],
+#etap2 input[type=text],
+#etap3 input[type=text],
+#etap4 input[type=text],
+#etap5 input[type=text],
+#etap6 input[type=text],
+#etap7 input[type=text],
+#etap8 input[type=text],
+#etap9 input[type=text],
+#etap10 input[type=text] {
+  border: solid #32936F 2px;
+  border-radius: 10px;
+  width: 50px;
+}
+
+#displayNewton, #displayVicsec {
+  border: solid #32936F 2px;
+  border-radius: 20px;
+}
+
+#etap1 button,
+#etap2 button,
+#etap3 button, 
+#etap4 button,
+#etap5 button,
+#etap6 button,
+#etap7 button,
+#etap8 button, 
+#etap9 button,
+#etap10 button   {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 20px;
+  border: solid black 1.5px;
+  padding: 15px 20px 15px 20px;
+  width: 100px;
+}
+
+.tabcontent {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin-right: 5%;
+  margin-left: 3%;
+}
+
+#colorThemes{
+  border: solid #32936F 2px;
+  border-radius: 10px;
+  width: 100px;
+}
+
+.tab {
+  overflow: hidden;
+  /* display: flex;
+  align-items: start; */
+}
+
+/* Style the buttons that are used to open the tab content */
+#etap1 .tab button,
+#etap2 .tab button,
+#etap3 .tab button,
+#etap4 .tab button,
+#etap5 .tab button,
+#etap6 .tab button,
+#etap7 .tab button,
+#etap8 .tab button,
+#etap9 .tab button,
+#etap10 .tab button {
+  width: 150px;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  border: 1px solid gainsboro;
+  background-color: #32936F;
+}
+
+/* Create an active/current tablink class */
+#etap1 .tab button.active,
+#etap2 .tab button.active,
+#etap3 .tab button.active,
+#etap4 .tab button.active,
+#etap5 .tab button.active,
+#etap6 .tab button.active,
+#etap7 .tab button.active,
+#etap8 .tab button.active,
+#etap9 .tab button.active,
+#etap10 .tab button.active {
+  background-color: white;
+  color: #32936F;
+}
+
+/* Style the tab content */
+.subtabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+  color: #32936F;
+  text-align: center;
+}
+
+.subtabcontent h4{
+  color: black;
+}
+
+.tablinks
+{
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+#etap3Heading
+{
+  padding: 6px 12px;
+  border-top: none;
+  color: black;
+  text-align: center;
+}
+
+.etapHeading
+{
+  padding: 6px 12px;
+  border-top: none;
+  color: black;
+  text-align: center;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  color: #000000;
+}
+
+th {
+  background-color: #32936F;
+  color: white;
+}
+
+.value-input {
+  width: 60px;
+}
+
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 0.5px solid #ddd;
+  margin-top: 20px;
+  margin-right: 30px;
+  display: flex;
+}
+
+#resultTableContainerEtap1, #resultTableContainerEtap2, #resultTableContainerEtap4
+{
+  overflow-y: auto;
+  margin-left: 40px;
+  margin-top: 55px;
+}
+
+h4
+{
+  margin-top: 10px;
+}
+
+.colored-square
+{
+  width: 20px;
+  height: 20px;
+  margin: 20px;
+  border: 0.5px solid;
+}
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px; /* Add some space between squares and text */
+  align-items: center;
+}
+
+.text-next-to-square
+{
+  margin-top: 10px;
+}
